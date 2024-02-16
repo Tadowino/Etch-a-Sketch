@@ -26,6 +26,7 @@ header > h1{
     width: 550px;
     border: 2px solid black;
     margin: auto;
+    display: grid;
 }
 .footer{
     display: flex;
