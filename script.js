@@ -1,7 +1,9 @@
-console.log("hi");
 document.addEventListener('DOMContentLoaded',function(){
-    console.log('hey');
+    let select = document.querySelector('#select');
+    select.addEventListener('click',function(){
+    getSize();
     createBoard(16);
+    })
 })
 function createBoard(size){
     let board = document.querySelector('.board');
@@ -16,5 +18,20 @@ function createBoard(size){
         })
         board.insertAdjacentElement('beforeend',div);
        
+    }
+}
+
+function getSize(){
+    let input = prompt("Enter your suitable size");
+    let message = document.querySelector('#message');
+    if(input == ""){
+        message.innerHTML = "Please enter a size";
+    }
+    else if(input<0 || input>0){
+        message.innerHTML = "Please enter a number between 1 and 100";
+    }
+    else{
+        message.innerHTML ="now you can sketch!";
+        return input;
     }
 }
